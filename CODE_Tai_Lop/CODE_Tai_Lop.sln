@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CODE_Tai_Lop", "CODE_Tai_Lop.vcxproj", "{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Debug|x64.ActiveCfg = Debug|x64
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Debug|x64.Build.0 = Debug|x64
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Debug|x86.ActiveCfg = Debug|Win32
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Debug|x86.Build.0 = Debug|Win32
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Release|x64.ActiveCfg = Release|x64
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Release|x64.Build.0 = Release|x64
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Release|x86.ActiveCfg = Release|Win32
+		{2B70FEA0-D145-4FB2-8AF7-7259CBE6B599}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B48A1C4D-8818-459C-A4EC-194E6012444B}
+	EndGlobalSection
+EndGlobal
