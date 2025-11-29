@@ -1,6 +1,29 @@
 
 #include <stdio.h>
 #include <math.h>
+void lapChucNang(int chonChucNang)
+{
+	int tiepTuc = 1;
+	while (tiepTuc == 1)
+	{
+		switch (chonChucNang)
+		{
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		default:
+			printf("Chon lai [0-10]\n");
+
+		}
+		printf("Tiep tuc chuc nang nay? [1=Co | 0=Khong\n");
+		scanf_s("%d", &tiepTuc);
+		system("cls"); // clear screen
+	}
+}
+
 // 1-----------------------------//
 void kiemTraSoNguyen() {
 	int chon;
