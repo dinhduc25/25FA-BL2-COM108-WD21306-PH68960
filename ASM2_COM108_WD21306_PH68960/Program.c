@@ -1,29 +1,6 @@
 
 #include <stdio.h>
 #include <math.h>
-void lapChucNang(int chonChucNang)
-{
-	int tiepTuc = 1;
-	while (tiepTuc == 1)
-	{
-		switch (chonChucNang)
-		{
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		default:
-			printf("Chon lai [0-10]\n");
-
-		}
-		printf("Tiep tuc chuc nang nay? [1=Co | 0=Khong\n");
-		scanf_s("%d", &tiepTuc);
-		system("cls"); // clear screen
-	}
-}
-
 // 1-----------------------------//
 void kiemTraSoNguyen() {
 	int chon;
@@ -119,37 +96,13 @@ void tinhToanphanSo() {
 		scanf_s("%d", &chon);
 	} while (chon == 1);
 }
-int main()
+void lapChucNang(int chon)
 {
-	int chon;
-	do {
-		printf("==========Menu===========");
-		printf("\n");
-		printf("1. Kiem tra so nguyen");
-		printf("\n");
-		printf("2. Uoc chung | Boi chung chua 2 so");
-		printf("\n");
-		printf("3. Tinh tien quan karaoke");
-		printf("\n");
-		printf("4 .Tinh tien dien ");
-		printf("\n");
-		printf("5. Chuc nang doi tien");
-		printf("\n");
-		printf("6. Lai suat vay ngan hang vay tra gop");
-		printf("\n");
-		printf("7. Vay tien mua xe");
-		printf("\n");
-		printf("8. Sap xep thong tin sinh vien");
-		printf("\n");
-		printf("9. Game FPOLY_LOTT(2/15)");
-		printf("\n");
-		printf("10. Tinh toan phan so");
-		printf("\n");
-		printf("Thoat chuong trinh: [0]\n");
-		printf("Chon chuc nang:");
-		printf("\n");
-		scanf_s("%d", &chon);
-		switch (chon) {
+	int tiepTuc = 1;
+	while (tiepTuc == 1)
+	{
+		switch (chon)
+		{
 		case 1:
 			kiemTraSoNguyen();
 			break;
@@ -184,6 +137,46 @@ int main()
 			printf("Hay chon lai tu cn [1-10]: \n");
 			printf("------------------------\n");
 			break;
+		}
+		printf("Tiep tuc chuc nang nay? [1=Co | 0=Khong\n");
+		scanf_s("%d", &tiepTuc);
+		system("cls"); // clear screen
+	}
+}
+
+
+int main()
+{
+	int chon;
+	do {
+		printf("==========Menu===========");
+		printf("\n");
+		printf("1. Kiem tra so nguyen");
+		printf("\n");
+		printf("2. Uoc chung | Boi chung chua 2 so");
+		printf("\n");
+		printf("3. Tinh tien quan karaoke");
+		printf("\n");
+		printf("4 .Tinh tien dien ");
+		printf("\n");
+		printf("5. Chuc nang doi tien");
+		printf("\n");
+		printf("6. Lai suat vay ngan hang vay tra gop");
+		printf("\n");
+		printf("7. Vay tien mua xe");
+		printf("\n");
+		printf("8. Sap xep thong tin sinh vien");
+		printf("\n");
+		printf("9. Game FPOLY_LOTT(2/15)");
+		printf("\n");
+		printf("10. Tinh toan phan so");
+		printf("\n");
+		printf("Thoat chuong trinh: [0]\n");
+		printf("Chon chuc nang:");
+		printf("\n");
+		scanf_s("%d", &chon);
+		if (chon != 0) {
+			lapChucNang(chon);
 		}
 	} while (chon != 0);
 }
