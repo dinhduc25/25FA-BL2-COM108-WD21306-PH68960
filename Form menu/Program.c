@@ -40,6 +40,7 @@ int main()
         printf("1. \n");
         printf("2. \n");
         printf("3. \n");
+        printf("3. \n");
         printf("Thoat chuong trinh: [0]\n");
         printf("Chon chuc nang:");
         printf("\n");
