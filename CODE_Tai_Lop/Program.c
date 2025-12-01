@@ -76,6 +76,7 @@ int main()
 		printf("a[%d] = ", i);
 		scanf_s("%d", &y[i]);
 	}
+	printf("Cac phan tu cua mang la: \n");
 	for (int i = 0; i < n; i++) {
 		printf(" %d", y[i]);
 	}
