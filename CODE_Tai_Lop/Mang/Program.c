@@ -4,7 +4,7 @@
 
 int main()
 {
-		int n;
+	/*	int n;
 		int y[10];
 		int tong = 0;
 		printf("Nhap phan tu: ");
@@ -19,5 +19,10 @@ int main()
 			tong += y[i];
 		}
 		printf("\n");
-		printf("Tong cac so la: %d ", tong);
+		printf("Tong cac so la: %d ", tong);*/
+	char ten[50];
+	printf("Nhap ten: ");
+	scanf_s("%s", &ten);
+	printf("ten cua ban la: %s", ten);
+
 }
