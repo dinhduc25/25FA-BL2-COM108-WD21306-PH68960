@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+// CASE 8
 struct SinhVien {
 	char ten[50];
 	float diem;
