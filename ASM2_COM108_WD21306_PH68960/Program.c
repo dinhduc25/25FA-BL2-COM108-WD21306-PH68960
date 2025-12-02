@@ -4,7 +4,22 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+// CASE 10
+int UCLN(int a, int b) {
+	while (b != 0) {
+		int tmp = a % b;
+		a = b;
+		b = tmp;
+	}
+	return a;
+}
 
+void rutGon(int* ts, int* ms) {
+	int u = UCLN(*ts, *ms);
+	*ts /= u;
+	*ms /= u;
+}
+//-------------------------
 // 1-----------------------------//
 void kiemTraSoNguyen() {
 	int chon;
@@ -245,6 +260,7 @@ void sapXepsv() {
 	int chon;
 	do {
 		printf(" Thuc thi sap xep sinh vien  \n");
+
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
@@ -294,7 +310,44 @@ void Game() {
 void tinhToanphanSo() {
 	int chon;
 	do {
-		printf("Thuc thi phep tinh  \n");
+		printf(" Thuc thi phep tinh  \n");
+		int ts1, ms1, ts2, ms2;
+		printf("Nhap phan so thu nhat [tu so | mau so]: ");
+		scanf_s("%d %d", &ts1, &ms1);
+		printf("Nhap phan so thu hai [tu so | mau so]: ");
+		scanf_s("%d %d", &ts2, &ms2);
+
+		if (ms1 == 0 || ms2 == 0) {
+			printf("Mau so khong hop le!\n");
+		}
+		else {
+			int tong_ts = ts1 * ms2 + ts2 * ms1;
+			int tong_ms = ms1 * ms2;
+			rutGon(&tong_ts, &tong_ms);
+
+			int hieu_ts = ts1 * ms2 - ts2 * ms1;
+			int hieu_ms = ms1 * ms2;
+			rutGon(&hieu_ts, &hieu_ms);
+
+			int tich_ts = ts1 * ts2;
+			int tich_ms = ms1 * ms2;
+			rutGon(&tich_ts, &tich_ms);
+
+			int thuong_ts = ts1 * ms2;
+			int thuong_ms = ts2 * ms1;
+			if (thuong_ms == 0) {
+				printf("Khong the chia cho 0!\n");
+			}
+			else {
+				rutGon(&thuong_ts, &thuong_ms);
+
+				printf("\nTong: %d/%d\n", tong_ts, tong_ms);
+				printf("Hieu: %d/%d\n", hieu_ts, hieu_ms);
+				printf("Tich: %d/%d\n", tich_ts, tich_ms);
+				printf("Thuong: %d/%d\n", thuong_ts, thuong_ms);
+			}
+		}
+
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
