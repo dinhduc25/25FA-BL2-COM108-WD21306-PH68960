@@ -1,4 +1,4 @@
-
+﻿
 #include <stdio.h>
 #include <math.h>
 // 1-----------------------------//
@@ -8,7 +8,30 @@ void kiemTraSoNguyen() {
 	do {
 
 		printf("Thuc thi kiem tra so nguyen \n");
+		int x;
+		printf("Nhap mot so bat ky: ");
+		scanf_s("%d", &x);
+		printf("----Ket qua kiem tra----\n");
+		printf("%d la so nguyen\n", x);
+		int ktNT = 1;
+		if (x < 2) ktNT = 0;
+		else
+			for (int i = 2; i <= sqrt(x); i++)
+				if (x % i == 0) {
+					ktNT = 0;
+					break;
+				}
+		if (ktNT)
+			printf("%d la so nguyen to\n", x);
+		else
+			printf("%d khong la so nguyen to\n", x);
 
+		// Kiểm tra số chính phương
+		int k = sqrt(x);
+		if (k * k == x)
+			printf("%d la so chinh phuong\n", x);
+		else
+			printf("%d khong la so chinh phuong\n", x);
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 		printf("\n");
@@ -44,9 +67,36 @@ void uocBoi() {
 void tinhTienkaraoke() {
 	int chon;
 	do {
-		printf("Thuc thi tim uoc boi  \n");
+		printf("  Thuc thi tinh tien karaoke  \n");
+		int gioBD, gioKT;
+		float tongTien = 0;
+		printf("Nhap gio bat dau (12-23): ");
+		scanf_s("%d", &gioBD);
+		printf("Nhap gio ket thuc (12-23): ");
+		scanf_s("%d", &gioKT);
+
+		if (gioBD < 12 || gioKT > 23 || gioBD >= gioKT) {
+			printf("Gio khong hop le! Quay ve menu.\n");
+		}
+		else {
+			int soGio = gioKT - gioBD;
+
+			if (soGio <= 3) {
+				tongTien = soGio * 150000;
+			}
+			else {
+				tongTien = 3 * 150000 + (soGio - 3) * 150000 * 0.7;
+			}
+			if (gioBD >= 14 && gioBD <= 17)
+				tongTien *= 0.9;
+
+			printf("So gio hat: %d\n", soGio);
+			printf("Tong tien can thanh toan: %.0f VND\n", tongTien);
+		}
+
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("\n");
 	} while (chon == 1);
 }
 //-----------------4------------------//
@@ -54,6 +104,43 @@ void tinhTiendien() {
 	int chon;
 	do {
 		printf("Thuc thi tinh tien dien  \n");
+		int kwh;
+		float tien = 0;
+
+		printf("Nhap so kWh dien da su dung: ");
+		scanf_s("%d", &kwh);
+
+		if (kwh < 0) {
+			printf("So kWh khong hop le!\n");
+		}
+		else {
+			int so = kwh;
+
+			if (so > 400) {
+				tien += (so - 400) * 2927;
+				so = 400;
+			}
+			if (so > 300) {
+				tien += (so - 300) * 2834;
+				so = 300;
+			}
+			if (so > 200) {
+				tien += (so - 200) * 2536;
+				so = 200;
+			}
+			if (so > 100) {
+				tien += (so - 100) * 2014;
+				so = 100;
+			}
+			if (so > 50) {
+				tien += (so - 50) * 1734;
+				so = 50;
+			}
+			if (so > 0) {
+				tien += so * 1678;
+			}
+			printf("Tong tien dien phai tra: %.0f VND\n", tien);
+		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
@@ -141,7 +228,7 @@ void lapChucNang(int chon)
 			uocBoi();
 			break;
 		case 3:
-			tinhLaiSuat();
+			tinhTienkaraoke();
 			break;
 		case 4:
 			tinhTiendien();
@@ -169,7 +256,7 @@ void lapChucNang(int chon)
 			printf("------------------------\n");
 			break;
 		}
-		printf("Ban muon xac nhan quay lai Menu ? [1=Co | 0=Khong\n");
+		printf("Ban muon xac nhan quay lai Menu ? [0=Co | 1=Khong]\n");
 		scanf_s("%d", &tiepTuc);
 		system("cls"); // clear screen
 	}
@@ -203,9 +290,9 @@ int main()
 		printf("10. Tinh toan phan so");
 		printf("\n");
 		printf("Thoat chuong trinh: [0]\n");
-		printf("Chon chuc nang:");
-		printf("\n");
+		printf("Chon chuc nang: ");
 		scanf_s("%d", &chon);
+		printf("-----------------------------\n");
 		if (chon != 0) {
 			lapChucNang(chon);
 		}
