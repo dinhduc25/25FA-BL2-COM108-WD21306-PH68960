@@ -1,6 +1,10 @@
 ﻿
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
 // 1-----------------------------//
 void kiemTraSoNguyen() {
 	int chon;
@@ -149,7 +153,7 @@ void tinhTiendien() {
 void doitien() {
 	int chon;
 	do {
-		printf("---Thuc thi doi tien---  \n");
+		printf("  Thuc thi doi tien \n");
 		int x;
 		int menhGia[] = { 500, 200, 100, 50, 20, 10, 5, 2, 1 };
 		int soTo[9] = { 0 };
@@ -173,7 +177,28 @@ void doitien() {
 void tinhLaiSuat() {
 	int chon;
 	do {
-		printf("Thuc thi tinh lai suat  \n");
+		printf(" Thuc thi tinh lai suat  \n");
+		float tienVay;
+		float laiSuat = 0.05;
+		int kyHan = 12;
+		
+		printf("Nhap so tien muon vay: ");
+		scanf_s("%f", &tienVay);
+
+		float gocPhaiTra = tienVay / kyHan; 
+		float tienConLai = tienVay;
+
+		printf("\n===== Bang tra gop 12 thang =====\n");
+		printf("Ky Han | Lai phai tra | Goc phai tra | So tien phai tra | So tien con lai\n");
+
+		for (int i = 1; i <= kyHan; i++) {
+			float laiPhaiTra = tienConLai * laiSuat;
+			float tongPhaiTra = gocPhaiTra + laiPhaiTra;
+			tienConLai -= gocPhaiTra;
+
+			printf("%2d     | %10.0f    | %10.0f   | %15.0f   | %15.0f\n",
+				i, laiPhaiTra, gocPhaiTra, tongPhaiTra, tienConLai);
+		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
@@ -182,7 +207,35 @@ void tinhLaiSuat() {
 void vayTienmuaXe() {
 	int chon;
 	do {
-		printf("Thuc thi vay tien  \n");
+		printf(" Thuc thi vay tien mua xe \n");
+
+		float phanTramVay;
+		const float giaXe = 500000000;        // 500 triệu
+		const int soThang = 24 * 12;          // 288 tháng
+		const float laiThang = 0.072 / 12;    // 0.6%/tháng
+
+		printf("Nhap %% so tien muon vay : ");
+		scanf_s("%f", &phanTramVay);
+
+		float tienVay = giaXe * (phanTramVay / 100);
+		float traTruoc = giaXe - tienVay;
+		float gocMoiThang = tienVay / soThang;
+		float noConLai = tienVay;
+
+		printf("\nTien tra truoc: %.0f VND\n", traTruoc);
+		printf("So tien vay: %.0f VND\n", tienVay);
+
+		printf("\n===== Bang tra gop 24 nam (288 thang) =====\n");
+		printf("Thang | Lai phai tra | Goc phai tra | Tong phai tra | No con lai\n");
+
+		for (int i = 1; i <= soThang; i++) {
+			float tienLai = noConLai * laiThang;
+			float tongTra = gocMoiThang + tienLai;
+			noConLai -= gocMoiThang;
+
+			printf("%4d | %11.0f | %12.0f | %13.0f | %12.0f\n",
+				i, tienLai, gocMoiThang, tongTra, noConLai);
+		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
@@ -191,7 +244,7 @@ void vayTienmuaXe() {
 void sapXepsv() {
 	int chon;
 	do {
-		printf("Thuc thi sap xep sinh vien  \n");
+		printf(" Thuc thi sap xep sinh vien  \n");
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
@@ -201,6 +254,38 @@ void Game() {
 	int chon;
 	do {
 		printf("Bat dau tro choi  \n");
+		int user[2];
+		int system[2];
+		int match = 0;
+
+		for (int i = 0; i < 2; i++) {
+			do {
+				printf("Nhap so thu %d (01-15): ", i + 1);
+				scanf_s("%d", &user[i]);
+			} while (user[i] < 1 || user[i] > 15);
+		}
+
+		srand((unsigned int)time(NULL));
+		system[0] = rand() % 15 + 1;
+		do {
+			system[1] = rand() % 15 + 1;
+		} while (system[1] == system[0]); 
+
+		printf("\nSo cua he thong: %02d %02d\n", system[0], system[1]);
+
+		for (int i = 0; i < 2; i++) {
+			if (user[i] == system[0] || user[i] == system[1]) {
+				match++;
+			}
+		}
+
+		if (match == 0)
+			printf("Chuc ban may man lan sau!\n");
+		else if (match == 1)
+			printf("Chuc mung ban da trung giai nhi!\n");
+		else if (match == 2)
+			printf("Chuc mung ban da trung giai nhat!\n");
+
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
