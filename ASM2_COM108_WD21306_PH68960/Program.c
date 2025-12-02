@@ -50,7 +50,6 @@ void kiemTraSoNguyen() {
 		else
 			printf("%d khong la so nguyen to\n", x);
 
-		// Kiểm tra số chính phương
 		int k = sqrt(x);
 		if (k * k == x)
 			printf("%d la so chinh phuong\n", x);
@@ -234,9 +233,9 @@ void vayTienmuaXe() {
 		printf(" Thuc thi vay tien mua xe \n");
 
 		float phanTramVay;
-		const float giaXe = 500000000;        // 500 triệu
-		const int soThang = 24 * 12;          // 288 tháng
-		const float laiThang = 0.072 / 12;    // 0.6%/tháng
+		const float giaXe = 500000000;       
+		const int soThang = 24 * 12;          
+		const float laiThang = 0.072 / 12;    
 
 		printf("Nhap %% so tien muon vay : ");
 		scanf_s("%f", &phanTramVay);
