@@ -20,6 +20,22 @@ void uocBoi() {
 	int chon;
 	do {
 		printf("Thuc thi tim uoc boi  \n");
+		int x, y;
+		int a, b;
+		printf("Nhap so nguyen to thu nhat: ");
+		scanf_s("%d", &x);
+		printf("Nhap so nguyen to thu hai: ");
+		scanf_s("%d", &y);
+		a = x;
+		b = y;
+		while (a != b) {
+			if (a > b)
+				a -= b;
+			else b -= a;
+		}
+		printf("UCLN cua %d va %d la: %d\n ", x, y, a);
+		int bcnn = (x * y) / a;
+		printf("BCNN la: %d\n", bcnn);
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
@@ -46,7 +62,22 @@ void tinhTiendien() {
 void doitien() {
 	int chon;
 	do {
-		printf("Thuc thi doi tien  \n");
+		printf("---Thuc thi doi tien---  \n");
+		int x;
+		int menhGia[] = { 500, 200, 100, 50, 20, 10, 5, 2, 1 };
+		int soTo[9] = { 0 };
+		printf("Nhap so tien can doi: ");
+		scanf_s("%d", &x);
+		int temp = x;
+		for (int i = 0; i < 9; i++) {
+			soTo[i] = temp / menhGia[i];
+			temp %= menhGia[i];
+		}
+		printf("Doi tien thanh: \n");
+		for (int i = 0; i < 9; i++) {
+			if (soTo[i] > 0)
+				printf("%d to menh gia: %d\n", soTo[i], menhGia[i]);
+		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
 	} while (chon == 1);
