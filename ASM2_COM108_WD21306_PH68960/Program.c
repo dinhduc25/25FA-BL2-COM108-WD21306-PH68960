@@ -169,7 +169,7 @@ void lapChucNang(int chon)
 			printf("------------------------\n");
 			break;
 		}
-		printf("Tiep tuc chuc nang nay? [1=Co | 0=Khong\n");
+		printf("Ban muon xac nhan quay lai Menu ? [1=Co | 0=Khong\n");
 		scanf_s("%d", &tiepTuc);
 		system("cls"); // clear screen
 	}
