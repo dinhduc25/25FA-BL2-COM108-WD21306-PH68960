@@ -58,7 +58,7 @@ void kiemTraSoNguyen() {
 			printf("%d khong la so chinh phuong\n", x);
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
-		printf("\n");
+		printf("---------------------------\n");
 	} while (chon == 1);
 	printf("\n");
 }
@@ -85,6 +85,7 @@ void uocBoi() {
 		printf("BCNN la: %d\n", bcnn);
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //------------3---------------------//
@@ -120,7 +121,7 @@ void tinhTienkaraoke() {
 
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
-		printf("\n");
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //-----------------4------------------//
@@ -167,6 +168,7 @@ void tinhTiendien() {
 		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //--------------5----------------------//
@@ -191,6 +193,7 @@ void doitien() {
 		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //--------------------6-------------------//
@@ -221,6 +224,7 @@ void tinhLaiSuat() {
 		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //---------------------------7----------------//
@@ -258,6 +262,7 @@ void vayTienmuaXe() {
 		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //-----------------8---------------------------//
@@ -275,9 +280,7 @@ void sapXepSV() {
 				printf("So luong khong hop le. Moi nhap lai.\n");
 		} while (n < 1 || n > 100);
 
-		getchar(); // Xóa ký tự Enter còn sót lại
-
-		// Nhập thông tin sinh viên
+		getchar(); 
 		for (int i = 0; i < n; i++) {
 			printf("\nNhap thong tin sinh vien thu %d\n", i + 1);
 
@@ -287,9 +290,7 @@ void sapXepSV() {
 
 			printf("Diem: ");
 			scanf_s("%f", &sv[i].diem);
-			getchar(); // Xóa ký tự Enter còn sót lại
-
-			// Xếp loại học lực
+			getchar(); 
 			if (sv[i].diem >= 9.0)
 				strcpy_s(sv[i].hocLuc, sizeof(sv[i].hocLuc), "Xuat sac");
 			else if (sv[i].diem >= 8.0)
@@ -302,7 +303,6 @@ void sapXepSV() {
 				strcpy_s(sv[i].hocLuc, sizeof(sv[i].hocLuc), "Yeu");
 		}
 
-		// Sắp xếp giảm dần theo điểm
 		for (int i = 0; i < n - 1; i++) {
 			for (int j = i + 1; j < n; j++) {
 				if (sv[i].diem < sv[j].diem) {
@@ -313,7 +313,6 @@ void sapXepSV() {
 			}
 		}
 
-		// In danh sách sau khi sắp xếp
 		printf("\n===== DANH SACH SINH VIEN SAU KHI SAP XEP =====\n");
 		printf("%-25s %-10s %-15s\n", "Ho ten", "Diem", "Hoc luc");
 		for (int i = 0; i < n; i++) {
@@ -321,6 +320,7 @@ void sapXepSV() {
 		}
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //-------------9-------------------------------//
@@ -362,6 +362,7 @@ void Game() {
 
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 //--------------------10-----------------------//
@@ -408,6 +409,7 @@ void tinhToanphanSo() {
 
 		printf("Tiep tuc chuc nang [1|khac]: ");
 		scanf_s("%d", &chon);
+		printf("---------------------------\n");
 	} while (chon == 1);
 }
 void lapChucNang(int chon)
