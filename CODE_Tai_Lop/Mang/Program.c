@@ -20,11 +20,12 @@ int main()
 		}
 		printf("\n");
 		printf("Tong cac so la: %d ", tong);*/
-	char ten[50];
-	printf("Nhap ten: ");
-	puts(ten);
-	//scanf_s("%s", &ten);
-	//printf("ten cua ban la: %s", ten);
-	fgets(ten, sizeof(ten), stdin);
-	printf("Ten la: %s", ten);
+	//char ten[50];
+	//printf("Nhap ten: ");
+	//puts(ten);
+	////scanf_s("%s", &ten);
+	////printf("ten cua ban la: %s", ten);
+	//fgets(ten, sizeof(ten), stdin);
+	//printf("Ten la: %s", ten);
+
 }
