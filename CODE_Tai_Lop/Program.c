@@ -41,10 +41,13 @@ void demoString() {
     fgets(name, sizeof(name), stdin);
     printf("\n");
 
-    printf("Ten vua nhap: %s\n", name);
+    printf("Ten vua nhap: %s\n", name);`
     */
     char name[50] = { "Anh" };
-    while (getchar() != '\n');
+    while (getchar() != '\n')
+    {
+        printf("%c", getchar());
+    }
     printf("Nhap ten cua ban: ");
     fgets(name, sizeof(name), stdin);
     printf("%s", name);
