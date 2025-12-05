@@ -1,6 +1,7 @@
 ﻿
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 void kiemTraSoNguyen()
 {
     printf("kiem tra so nguyen\n");
@@ -43,16 +44,16 @@ void demoString() {
 
     printf("Ten vua nhap: %s\n", name);`
     */
-    char mangKyTu;
-   /* while (getchar() != '\n')
+    char mangKyTu[100] = {"Anh"};
+    while (getchar() != '\n')
     {
         printf("%c", getchar());
     }
     printf("Nhap ten cua ban: ");
-    fgets(name, sizeof(name), stdin);
-    printf("%s", name);
-    printf("\n");*/
-    
+    fgets(mangKyTu, sizeof(mangKyTu), stdin);
+    printf("%s", mangKyTu);
+    printf("\n");
+   
     printf("String length: ");
     printf("%d", strlen(mangKyTu) - 1);
     printf("\n");
@@ -87,6 +88,7 @@ void demoString() {
     else
     {
         printf("NOT FOUND");
+        printf("\n");
     }
 
 }
