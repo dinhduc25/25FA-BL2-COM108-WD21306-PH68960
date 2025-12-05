@@ -27,5 +27,4 @@ int main()
 	////printf("ten cua ban la: %s", ten);
 	//fgets(ten, sizeof(ten), stdin);
 	//printf("Ten la: %s", ten);
-
 }
