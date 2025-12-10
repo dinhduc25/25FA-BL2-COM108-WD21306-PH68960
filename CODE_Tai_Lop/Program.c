@@ -54,7 +54,7 @@ void demoString() {
     printf("%s", mangKyTu);
     printf("\n");
    
-    printf("String length: ");
+   /* printf("String length: ");
     printf("%d", strlen(mangKyTu) - 1);
     printf("\n");
     printf("String Compare The Same As: ");
@@ -89,7 +89,7 @@ void demoString() {
     {
         printf("NOT FOUND");
         printf("\n");
-    }
+    }*/
 
 }
 

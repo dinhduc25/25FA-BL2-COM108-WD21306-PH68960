@@ -274,7 +274,7 @@ void sapXepSV() {
 		struct SinhVien sv[100];
 
 		do {
-			printf("Nhap so luong sinh vien (1-100): ");
+			printf("Nhap so luong sinh vien: ");
 			scanf_s("%d", &n);
 			if (n < 1 || n > 100)
 				printf("So luong khong hop le. Moi nhap lai.\n");

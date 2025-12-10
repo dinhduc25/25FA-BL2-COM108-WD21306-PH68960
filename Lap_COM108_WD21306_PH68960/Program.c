@@ -1,24 +1,50 @@
-// CConsoleApplication.c : file nay chua 'main' function. 
-// Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
 
 #include <stdio.h>
+#include <math.h>
+void lapChucNang(int chon)
+{
+    int tiepTuc = 1;
+    while (tiepTuc == 1)
+    {
+        switch (chon)
+        {
+        case 1:
+            printf("Ban da chon chuc nang 1\n");
+            break;
+        case 2:
+            printf("Ban da chon chuc nang 2\n");
+            break;
+        case 3:
+            printf("Ban da chon chuc nang 3\n");
+            break;
+        case 4:
+            printf("Ban da chon chuc nang 4\n");
+            break;
+        default:
+            printf("Hay chon lai tu cn [1-10]: \n");
+            break;
+        }
 
+        printf("Tiep tuc chuc nang nay? [1=Co | 0=Khong]: ");
+        scanf_s("%d", &tiepTuc);
+        system("cls");
+    }
+}
 int main()
 {
-    printf("Hi there!\n");
+    int chon;
+    do {
+        printf("=========MENU=========\n");
+        printf("1. \n");
+        printf("2. \n");
+        printf("3. \n");
+        printf("3. \n");
+        printf("Thoat chuong trinh: [0]\n");
+        printf("Chon chuc nang:");
+        printf("\n");
+        scanf_s("%d", &chon);
+        if (chon != 0) {
+            lapChucNang(chon);
+        }
+    } while (chon != 0);
 }
-
-// Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
-
-// Danh cho nguoi moi bat dau:
-//   1. Dung "Solution Explorer window" de them/quan ly cac files
-//   2. Dung "Output window" de kiem tra "build output" va "cac thong bao khac"
-//   3. Dung "Error List window" de xem loi
-//   4. Chon "Project > Add New Item" de tao moi file code,
-//      hoac "Project > Add Existing Item" de them file da ton tai vao project nay.
-//   5. Sau nay, de mo lai project nay,
-//      chon "File > Open > Project" va chon file *.sln
-//      Co the xem thu muc project, noi luu file *.sln bang cach
-//      bam phim chuot phai vao "Solution" > chon "Open Folder in File Explorer"
-
-// GV: AnhTT184
