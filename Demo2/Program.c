@@ -39,7 +39,6 @@ void tinhTong() {
     printf("\n--- KET QUA ---\n");
     printf("Tong cac so = %d\n", tong);
 
-    // Kiem tra cac so co chia het cho 5
     printf("Cac so chia het cho 5: ");
     int co = 0;
     for (int i = 0; i < n; i++) {
@@ -69,10 +68,18 @@ void thongTinCH() {
             min = canNang[i];
         }
     }
+    float tb = tong / sl;
 
+    int demDuoiTB = 0;
+    for (int i = 0; i < sl; i++) {
+        if (canNang[i] < tb) {
+            demDuoiTB++;
+        }
+    }
     printf("\n--- KET QUA ---\n");
     printf("Can nang trung binh: %.2f\n", tong / sl);
     printf("Can nang nho nhat: %.2f\n", min);
+    printf("So thu cung co can nang duoi muc trung binh: %d\n", demDuoiTB);
 }
 void lapChucNang(int chon)
 {
